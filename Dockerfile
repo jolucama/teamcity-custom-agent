@@ -23,4 +23,7 @@ RUN apt-get update \
  && mv ./aws-iam-authenticator /usr/local/bin/aws-iam-authenticator \
  && curl -O https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz \
  && tar -zxvf helm-v2.13.1-linux-amd64.tar.gz \
- && cp linux-amd64/helm /usr/local/bin/helm
+ && cp linux-amd64/helm /usr/local/bin/helm \
+ && curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh \
+ && bash nodesource_setup.sh \
+ && apt-get install -y nodejs
